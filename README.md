@@ -11,7 +11,8 @@ Series of math codes
 # Log calculator
  - Log calculator, can calculate logs
 # Trig calculator
- - Trig calculator, can calculate trignometric ratios
+ - Trig calculator, can calculate sin, cos, tan, csc, sec, and cot trignometric ratios
+ - Is not generateing accurate values right now (I have opened an issue)
 # Graphing calc
  - Basic graphing calculator, can process only constant and linear functions, generates table of values and graph in shell using text output
 # Advanced graphing calc
