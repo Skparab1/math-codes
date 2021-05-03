@@ -2,6 +2,7 @@
 Series of math codes
 # Quadratic formula
  - Quadratic formula calculator, can process imaginary number solutions
+ - Enter a,b,c, will generate detected equation and solutions
 # Factorizer
  - Number factorizer, can prime factorize any rational number
 # Synthetic division
