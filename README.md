@@ -6,7 +6,8 @@ Series of math codes
 # Factorizer
  - Number factorizer, can prime factorize any rational number
 # Synthetic division
- - Synthetic division calculator, can devide a polynomial by a binomial
+ - Synthetic division calculator, can divide a polynomial by a binomial
+ - generates numbers properly, but does not format properly
 # Rational remainder theorem
  - Rational remainder theorem calculator, can find out the possible factors of a polynomial
 # Log calculator
