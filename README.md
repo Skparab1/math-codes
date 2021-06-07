@@ -1,5 +1,9 @@
 # math-codes
 Series of math codes
+# Master math calculator:
+![](mathcalc1.gif)
+![](mathcalc2.gif)
+![](mathcalc3.gif)
 # Quadratic formula
  - Quadratic formula calculator, can process imaginary number solutions
  - Enter a,b,c, will generate detected equation and solutions
