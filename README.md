@@ -1,8 +1,9 @@
 # math-codes
 Series of math codes
-# Master math calculator:
+# Master math calculator demos:
 <img src="mathcalc1.gif" width="400"> <img src="mathcalc2.gif" width="400"> <img src="mathcalc3.gif" width="400">
 
+- currently, it can only do the following: logs, quadratic formula, integer factorization, addition, subtraction, multiplication, division, exponents, square roots, and factorials.
 # Quadratic formula
  - Quadratic formula calculator, can process imaginary number solutions
  - Enter a,b,c, will generate detected equation and solutions
