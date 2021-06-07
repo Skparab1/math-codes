@@ -4,6 +4,7 @@ Series of math codes
 <img src="mathcalc1.gif" width="300">
 <img src="mathcalc2.gif" width="300">
 <img src="mathcalc3.gif" width="300">
+
 # Quadratic formula
  - Quadratic formula calculator, can process imaginary number solutions
  - Enter a,b,c, will generate detected equation and solutions
