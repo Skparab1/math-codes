@@ -123,7 +123,7 @@ def quadratic_formula():
             val2 = val2 - math.sqrt(val3)
             val1 = (val1 / (2*a))
             val2 = (val2 / (2*a))
-            toprint = val1 if val1 == val2 else val1, val2)
+            toprint = val1 if val1 == val2 else val1, val2
             print(toprint)
             memory = memory + '\n' + 'You entered: a =' + str(a)+'  b =' +str(b)+'  c =' + str(c) + '\nThe equation detected is' + str(equation) + '\nThe solution(s) are' + str(toprint)
             shelvewrite('mastermathmemory',memory)
@@ -154,6 +154,8 @@ while True:
         print('Quadratic formula..............qua 1 11 30 for x²+11x+30')
         #print('Polynomial factorizer..........pol 1 -3 24 -31 for x³-x²+x-31')
         print('Number factorizer..............fac 24 for factorizing 24')
+        print('Trig ratios....................sec 23 for secant 23 degrees')
+        print('Convert deg to rad.............rad 23 to convert 23 degrees to radians')
         #print('Add list.......................add list of numbers ')
         #print('Average of list................ave list of numbers ')
         #print('Max value of list..............max list of numbers ')
@@ -217,6 +219,27 @@ while True:
         if line == 'sqt ':
             command = int(command)
             print(math.sqrt(command))
+        if line == 'sin ':
+            command = int(command)
+            print(math.sin(math.radians(command)))
+        if line == 'cos ':
+            command = int(command)
+            print(math.cos(math.radians(command)))
+        if line == 'tan ':
+            command = int(command)
+            print(math.tan(math.radians(command)))
+        if line == 'csc ':
+            command = int(command)
+            print(1/(math.sin(math.radians(command))))
+        if line == 'sec ':
+            command = int(command)
+            print(1/(math.cos(math.radians(command))))
+        if line == 'cot ':
+            command = int(command)
+            print(1/(math.tan(math.radians(command))))
+        if line == 'rad ':
+            command = int(command)
+            print(math.radians(command))
         if line == 'clr ':
             print('\n'*50)
         if line == 'hlp ':
