@@ -1,3 +1,4 @@
+# function to extract values in a string into multiple variables
 def stringslicer(string):
     a = ''
     b = ''
@@ -92,6 +93,8 @@ def stringslicer(string):
             #print('came in to F and varscanned was ' ,variables_scanned, ' f is ', f)
         scanner += 1
     return a, b, c, d, e, f
+
+# convert vals to strings and calculate the answers
 def calculate_vals(a,b,c,d,e,f,x):
     if f == '' and e == '' and d == '' and c == '' and b == '':
         a = float(a)
@@ -133,21 +136,34 @@ def calculate_vals(a,b,c,d,e,f,x):
         x = float(x)
         val = (a * (x * x * x * x * x)) + (b * (x * x * x * x)) + (c * (x * x * x)) + (d * (x * x)) + (e * x) + f
     return val
+
+# get the coeficients
 wholestring = input('enter all the coeficients, seperated by spaces:   ')
+
+# slice the string and extract variables
 a, b, c, d, e, f = stringslicer(wholestring)
+
+# detect and print the equation based on empty variables
+
 if f == '' and e == '' and d == '' and c == '' and b == '':
     print('You entered:   a = ', a)
     print('The equation detected was    y = ',a)
+    eq = ' y = ' + str(a)
+
 elif f == '' and e == '' and d == '' and c == '':
     print('You entered:   a = ', a, '    b = ', b)
     bsign = '+ ' if int(b) >= 0 else ''
     print('The equation detected was    y = ',a,'x ', bsign,b )
+    eq = ' y = ' + str(a) + 'x ' + str(bsign) + str(b) 
 elif f == '' and e == '' and d == '':
     bsign = '+ ' if int(b) >= 0 else ''
     csign = '+ ' if int(c) >= 0 else ''
     print('The equation detected was    y = ',a,'x² ', bsign,b,'x ',csign,c )
     print('You entered:   a = ', a, '    b = ', b, '    c = ', c)
-# ² ³ ⁴ ⁵ ⁶ ⁷ ⁸
+    eq = ' y = '+ str(a) + 'x² ' + str(bsign) + str(b) + 'x ' + str(csign) + str(c)
+
+# Superscripts: ² ³ ⁴ ⁵ ⁶ ⁷ ⁸
+
 elif f == '' and e == '':
     lastval = d
     bsign = '+ ' if int(b) >= 0 else ''
@@ -155,6 +171,7 @@ elif f == '' and e == '':
     dsign = '+ ' if int(d) >= 0 else ''
     print('The equation detected was    y = ',a,'x³ ', bsign,b,'x² ',csign,c,'x ',dsign,d )
     print('You entered:   a = ', a, '    b = ', b, '    c = ', c, '    d = ', d)
+
 elif f == '':
     lastval = e
     bsign = '+ ' if int(b) >= 0 else ''
@@ -163,6 +180,7 @@ elif f == '':
     esign = '+ ' if int(e) >= 0 else ''
     print('You entered:   a = ', a, '    b = ', b, '    c = ', c, '    d = ', d, '    e = ', e)
     print('The equation detected was    y = ',a,'x⁴ ',bsign,b,'x³ ',csign,c,'x² ',dsign,d,'x ',esign,e)
+
 else:
     lastval = f
     bsign = '+ ' if int(b) >= 0 else ''
@@ -172,6 +190,8 @@ else:
     fsign = '+ ' if int(f) >= 0 else ''
     print('You entered:   a = ', a, '    b = ', b, '    c = ', c, '    d = ', d, '    e = ', e, '    f = ', f)
     print('The equation detected was    y = ',a,'x⁵',bsign,b,'x⁴ ',csign,c,'x³ ',dsign,d,'x² ',esign,e,'x ',fsign,f)
+
+#  prints xy tables based on the values that user enters and solves using calculate_vals
 print('x y table')
 print('\n  x    y  ')
 print('__________')
@@ -196,24 +216,39 @@ print('7    | ', calculate_vals(a,b,c,d,e,f, 7))
 print('8    | ', calculate_vals(a,b,c,d,e,f, 8))
 print('9    | ', calculate_vals(a,b,c,d,e,f, 9))
 print('10   | ', calculate_vals(a,b,c,d,e,f, 10))
+
+# calculates largest value of set in order to determine the axis of the graph
 largest = max(calculate_vals(a,b,c,d,e,f,-10),calculate_vals(a,b,c,d,e,f,-9),calculate_vals(a,b,c,d,e,f,-8),calculate_vals(a,b,c,d,e,f,-7),calculate_vals(a,b,c,d,e,f,-6),calculate_vals(a,b,c,d,e,f,-5),calculate_vals(a,b,c,d,e,f,-4),calculate_vals(a,b,c,d,e,f,-3),calculate_vals(a,b,c,d,e,f,-2),calculate_vals(a,b,c,d,e,f,-1),calculate_vals(a,b,c,d,e,f,0),calculate_vals(a,b,c,d,e,f,1),calculate_vals(a,b,c,d,e,f,2),calculate_vals(a,b,c,d,e,f,3),calculate_vals(a,b,c,d,e,f,4),calculate_vals(a,b,c,d,e,f,5),calculate_vals(a,b,c,d,e,f,6),calculate_vals(a,b,c,d,e,f,7),calculate_vals(a,b,c,d,e,f,8),calculate_vals(a,b,c,d,e,f,9),calculate_vals(a,b,c,d,e,f,10))
+
+# calculates largest value of set in order to determine the axis of the graph
 least = min(calculate_vals(a,b,c,d,e,f,-10),calculate_vals(a,b,c,d,e,f,-9),calculate_vals(a,b,c,d,e,f,-8),calculate_vals(a,b,c,d,e,f,-7),calculate_vals(a,b,c,d,e,f,-6),calculate_vals(a,b,c,d,e,f,-5),calculate_vals(a,b,c,d,e,f,-4),calculate_vals(a,b,c,d,e,f,-3),calculate_vals(a,b,c,d,e,f,-2),calculate_vals(a,b,c,d,e,f,-1),calculate_vals(a,b,c,d,e,f,0),calculate_vals(a,b,c,d,e,f,1),calculate_vals(a,b,c,d,e,f,2),calculate_vals(a,b,c,d,e,f,3),calculate_vals(a,b,c,d,e,f,4),calculate_vals(a,b,c,d,e,f,5),calculate_vals(a,b,c,d,e,f,6),calculate_vals(a,b,c,d,e,f,7),calculate_vals(a,b,c,d,e,f,8),calculate_vals(a,b,c,d,e,f,9),calculate_vals(a,b,c,d,e,f,10))
+
+# makes the least or largest var positive if negative
 least = -1 * least if least < 0 else least
 largest = -1 * largest if largest < 0 else largest
 mult = largest if largest >= least else least
+
 #skipper = 10 if mult <= 10 else (50 if mult <= 50 else (100 if mult <= 100 else ( 150 if mult <= 150 else (200 if mult <= 200 else (300 if mult <= 300 else (400 if mult <= 400 else (500)))))))
+
+# calculate increment which the graph should have (gap)
 skipper = mult
 while str(int(skipper))[-1] != '0':
     skipper += 1
 gap = skipper/10
 print(gap)
+
+# draw the graph using turtle graphics
 import turtle
+
+# initialize turtle
 graphdrawer = turtle.Turtle()
 graphdrawer.color("blue")
 graphdrawer.pensize(3)
 graphdrawer.speed(-1)
 graphdrawer.left(90)
 j = 0
+
+# draw x and y axis with numbers
 while j <= 3:
     i = 1
     while i <= 10:
@@ -245,7 +280,9 @@ while j <= 3:
     graphdrawer.forward(220)
     graphdrawer.right(90)
     j += 1
-#each 20m segment is worth gap
+
+# draw all the points
+# each 20m segment is worth gap
 gap = 20 / gap
 pointdraw = turtle.Turtle()
 pointdraw.turtlesize(0.56)
